@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NEU Library — Register</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .register-card { max-width: 500px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .82rem; color: var(--text-muted);
+      text-decoration: none; margin-bottom: 1.2rem;
+      transition: color .2s;
+    }
+    .back-link:hover { color: var(--navy); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; }
+    .success-register { text-align: center; padding: 1.5rem 0; }
+    .success-register .check-icon { margin: 0 auto 1rem; width: 60px; height: 60px; }
+    .success-register h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; color: var(--navy); margin-bottom: .4rem;
+    }
+    .success-register p { font-size: .88rem; color: var(--text-muted); margin-bottom: 1.2rem; }
+    @media (max-width: 480px) { .two-col { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div class="bg-image"></div>
+  <div class="bg-overlay"></div>
+
+  <nav class="navbar">
+    <div class="nav-brand">
+      <div class="nav-logo">
+        <img src="pictures logo/logo.png" alt="NEU Logo" style="width:38px;height:38px;object-fit:contain;border-radius:50%;"/>
+      </div>
+      <span class="nav-title">NEU Library</span>
+    </div>
+  </nav>
+
+  <main class="main-content" style="padding: 2rem 1.5rem;">
+    <!-- Register Card -->
+    <div class="card register-card" id="registerCard">
+      <a href="index.html" class="back-link">
+        <svg viewBox="0 0 20 20" fill="none" width="14" height="14">
+          <path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to Sign In
+      </a>
+
+      <div class="card-header">
+        <h1 class="card-title">Create Account</h1>
+        <p class="card-subtitle">Register your NEU Library account.</p>
+      </div>
+
+      <!-- Full Name -->
+      <div class="form-group">
+        <label class="form-label">FULL NAME</label>
+        <div class="input-wrapper">
+          <svg class="input-icon" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="7" r="3.5" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M3 17c0-3.314 3.134-6 7-6s7 2.686 7 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <input type="text" id="fullName" class="form-input" placeholder="Enter your full name"/>
+        </div>
+        <span class="error-msg" id="nameError">Please enter your full name.</span>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label class="form-label">GOOGLE EMAIL (@neu.edu.ph)</label>
+        <div class="input-wrapper">
+          <svg class="input-icon" viewBox="0 0 20 20" fill="none">
+            <path d="M2.5 5.5A1.5 1.5 0 014 4h12a1.5 1.5 0 011.5 1.5v9A1.5 1.5 0 0116 16H4a1.5 1.5 0 01-1.5-1.5v-9z" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M2.5 5.5l7.5 5.5 7.5-5.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <input type="email" id="regEmail" class="form-input" placeholder="yourname@neu.edu.ph"/>
+        </div>
+        <span class="error-msg" id="emailError">Please enter a valid @neu.edu.ph email.</span>
+      </div>
+
+      <!-- Year Level -->
+      <div class="form-group">
+        <label class="form-label">YEAR LEVEL</label>
+        <div class="select-wrapper">
+          <select id="yearLevel" class="form-select">
+            <option value="">— Select year level —</option>
+            <option value="1st Year">1st Year</option>
+            <option value="2nd Year">2nd Year</option>
+            <option value="3rd Year">3rd Year</option>
+            <option value="4th Year">4th Year</option>
+            <option value="5th Year">5th Year</option>
+            <option value="Graduate">Graduate</option>
+            <option value="Faculty / Staff">Faculty / Staff</option>
+          </select>
+          <svg class="select-arrow" viewBox="0 0 20 20" fill="none">
+            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="error-msg" id="yearError">Please select your year level.</span>
+      </div>
+
+      <!-- College -->
+      <div class="form-group">
+        <label class="form-label">COLLEGE</label>
+        <div class="select-wrapper">
+          <select id="regCollege" class="form-select">
+            <option value="">— Select college —</option>
+            <option value="College of Accountancy">College of Accountancy</option>
+            <option value="College of Agriculture">College of Agriculture</option>
+            <option value="College of Arts and Sciences">College of Arts and Sciences</option>
+            <option value="College of Business Administration">College of Business Administration</option>
+            <option value="College of Communication">College of Communication</option>
+            <option value="College of Informatics and Computing Studies">College of Informatics and Computing Studies</option>
+            <option value="College of Criminology">College of Criminology</option>
+            <option value="College of Education">College of Education</option>
+            <option value="College of Engineering and Architecture">College of Engineering and Architecture</option>
+            <option value="College of Medical Technology">College of Medical Technology</option>
+            <option value="College of Midwifery">College of Midwifery</option>
+            <option value="College of Music">College of Music</option>
+            <option value="College of Nursing">College of Nursing</option>
+            <option value="College of Physical Therapy">College of Physical Therapy</option>
+            <option value="College of Respiratory Therapy">College of Respiratory Therapy</option>
+            <option value="School of International Relations">School of International Relations</option>
+            <option value="Faculty / Staff">Faculty / Staff</option>
+          </select>
+          <svg class="select-arrow" viewBox="0 0 20 20" fill="none">
+            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="error-msg" id="collegeError">Please select your college.</span>
+      </div>
+
+      <!-- Program -->
+      <div class="form-group">
+        <label class="form-label">PROGRAM / DEPARTMENT</label>
+        <div class="select-wrapper">
+          <select id="regProgram" class="form-select" disabled>
+            <option value="">— Select college first —</option>
+          </select>
+          <svg class="select-arrow" viewBox="0 0 20 20" fill="none">
+            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="error-msg" id="programError">Please select your program.</span>
+      </div>
+
+      <p class="error-msg" id="generalError" style="display:none;margin-bottom:.5rem;font-size:.82rem;"></p>
+
+      <button class="btn-primary" id="registerBtn">
+        <span class="btn-text">Create Account</span>
+        <span class="btn-spinner" id="regSpinner"></span>
+      </button>
+
+      <div class="divider"><span>already have an account?</span></div>
+      <a href="index.html" style="display:block;text-align:center;font-size:.85rem;color:var(--navy);font-weight:600;text-decoration:none;">Sign In →</a>
+    </div>
+
+    <!-- Success Card -->
+    <div class="card register-card" id="successRegCard" style="display:none;">
+      <div class="success-register">
+        <div class="check-icon">
+          <svg viewBox="0 0 60 60" fill="none">
+            <circle cx="30" cy="30" r="28" stroke="#1a2a4a" stroke-width="2.5"/>
+            <path d="M18 30l9 9 15-15" stroke="#1a2a4a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h2>Account Created!</h2>
+        <p>Your NEU Library account has been successfully registered. You can now sign in.</p>
+        <a href="index.html" class="btn-primary" style="display:block;text-decoration:none;text-align:center;">Go to Sign In</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="pictures logo/logo.png" alt="NEU Logo" class="footer-logo" style="width:34px;height:34px;object-fit:contain;border-radius:50%;"/>
+        <div class="footer-brand-text">
+          <span class="footer-name">New Era University Library</span>
+          <span class="footer-tagline">Knowledge · Faith · Service</span>
+        </div>
+      </div>
+      <div class="footer-copy">
+        <span id="footerYear"></span> &copy; New Era University. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="register.js"></script>
+</body>
+</html>
